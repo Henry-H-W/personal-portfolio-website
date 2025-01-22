@@ -1,9 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export async function GET(req: Request) {
+  console.log("sadnjkshjda");
+
+  return NextResponse.json({message: "sdads"}, {status: 200});
+};
+
+export async function POST(req: Request) {
+  console.log("hit");
   const { data, error } = await resend.emails.send({
     from: 'Henry <henry-h.wang@hotmail.com>',
     to: ['henry-h.wang@hotmail.com'],
@@ -15,8 +22,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   });
 
   if (error) {
-    return res.status(400).json(error);
+    console.log(error);
+    return NextResponse.json(error, {status: 400});
   }
 
-  res.status(200).json(data);
+  return NextResponse.json(data, {status: 200});
 };

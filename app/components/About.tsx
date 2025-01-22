@@ -17,7 +17,7 @@ const About = () => {
                 <h3>About Me</h3>   
                 <div className='h-1 w-full bg-gradient-to-tr from-[#858bff] to-[#4ADEDE] mb-4 '></div>
                 <p className='text-[#b1b1b1] leading-loose'>
-                    I'm Henry Wang, a third year Software Engineering student at the University of Western Ontario from Scarborough Ontario. 
+                    I&apos;m Henry Wang, a third year Software Engineering student at the University of Western Ontario from Scarborough Ontario. 
                     I have experience working with both frontend and backend development, using languages and frameworks including Nextjs, TailWindm, Python, Java, SQL, JavaScript, and Git.
                     In addition, I have experience with machine learning, working with tools such as Tensorflow and Mediapipe. 
                     In my free time, I enjoy playing piano and adding records to my vinyl collection. 

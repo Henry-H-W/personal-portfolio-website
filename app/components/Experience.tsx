@@ -96,7 +96,7 @@ const Experience = () => {
                         );
                       })}
                     </div>
-                    <img
+                    <Image
                       src={element.icon === "school" ? schoolIcon : workIcon}
                       alt="icon"
                       className={`${color} w-8 p-1 rounded-lg z-20 absolute left-4 top-4 sm:hidden`}

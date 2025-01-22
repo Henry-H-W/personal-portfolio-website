@@ -1,17 +1,40 @@
+'use client'
 import React from 'react'
 import GithubIcon from '/public/github-icon.svg'
 import LinkdinIcon from '/public/linkedin-icon.svg'
 import Link from 'next/link'
 import Image from 'next/image'
 
+
+
 const Contact = () => {
+    const sendHandler = async () => {
+        try {
+            const res = await fetch(`/api/send`, {
+    
+                // Adding method type
+                method: "POST",
+                
+                // Adding body or contents to send
+                body: JSON.stringify({
+                    test: "test"
+                })
+            });
+            
+            const data = await res.json();
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
   return (
     <section id='Contact' className='grid md:grid-cols-2 px-24 py-24 mx-3 rounded-t-lg gap-10 h-fit bg-gradient-to-tr from-[#858bff] to-[#4ADEDE]  '>
         <div className='max-w-[500px]'>
-            <h3>Let's Connect!</h3>
+            <h3>Let&apos;s Connect!</h3>
 
             <p className='text-[#d3d3d3] mb-4 mt-4 text-lg'>
-                I'm currently looking for new opportunities to connect with people. My inbox is always open, so feel free to reach out to me.
+                I&apos;m currently looking for new opportunities to connect with people. My inbox is always open, so feel free to reach out to me.
                 Looking forward to getting in contact with you!
             </p>
             
@@ -60,6 +83,7 @@ const Contact = () => {
                 </div>
                 <button
                     type='submit'
+                    onClick={sendHandler}
                     className='px-1 py-3 w-full rounded-lg ease-in-out bg-[#6448ff] mt-4 hover:bg-[#765eff] duration-100 text-white'
                 >Send Message</button>
 
